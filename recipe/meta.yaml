@@ -1,5 +1,5 @@
 {% set name = "jpf" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 24048107507a7bc3aee479760a19cd4fa21591904922a42e203e26376731807d
+  sha256: f7c910a6e55683474316567cb252f5382512c25972059078525dc7b8ee38786e
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
     - jpf = jpf:main
